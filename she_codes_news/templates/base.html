@@ -1,18 +1,20 @@
+<!-- templates/base.html -->
 {% load static %}
-
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>She Codes News</title>
     <meta name="description" content="" />
     <meta name="author" content="Goya Zheng" />
     <link
-      href="https://fonts.googleapis.com/css?family=Manjari&display=swap"
+      href="https://fonts.googleapis.com/css?
+family=Manjari&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
-    {% block stylesheets %} {% endblock %}
+    {% block stylesheets %}{% endblock %}
   </head>
-
   <body>
     <header>
       <div id="header-text">
@@ -22,8 +24,6 @@
       </div>
       {% include './nav.html' %}
     </header>
-
-    <!-- content blocks here -->
     {% block content %}{% endblock %}
   </body>
-
+</html>
