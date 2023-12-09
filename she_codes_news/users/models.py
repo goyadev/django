@@ -9,16 +9,11 @@ from django.db import models
 # from django.contrib.auth.models import User
 
 class CustomUser(AbstractUser):
-    pass
-def __str__(self):
-    return self.username
+    bio = models.TextField(max_length=500, blank = True, null = True)
+    
+    
+    
+    
+    def __str__(self):
+        return self.username
 
-
-
-# Extending User Model Using a One-To-One Link
-# class UserProfile(AbstractUser):
-    # user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
-    # bio = models.TextField()
-
-    # def __str__(self):
-    #     return self.user.username
