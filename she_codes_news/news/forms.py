@@ -9,7 +9,7 @@ class StoryForm(ModelForm):
         fields = ['title', 'pub_date', 'image', 'content']
         widgets = {
             'pub_date': forms.DateInput(
-                format='%m/%d/%Y',
+                format='%d/%m/%Y',
                 attrs={
                     'class':'form-control',
                     'placeholder':'Select a date',

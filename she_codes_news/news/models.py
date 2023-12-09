@@ -7,7 +7,8 @@ class NewsStory(models.Model):
         get_user_model(),
         on_delete=models.CASCADE
     )
-    pub_date = models.DateTimeField()
+    # Changed this from .DateTimeField to .DateField to remove the time on articles. Needed to remember to makemigrations
+    pub_date = models.DateField()
     content = models.TextField()
     image = models.URLField(null=True, blank=True)
     

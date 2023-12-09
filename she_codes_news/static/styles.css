@@ -1,29 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap');
 
+/* Colours as root variables */
+
+
+:root {
+    --white: #eceaea;
+    --melon: #daa89b;
+    --rosybrown: #ae847e;
+    --darkpurple:#2c0e37;
+    --purple: #690375;
+    --mulberry:#cb429f;
+    --black:#121010;
+}
+
 body {
-    background-color: rgb(240, 239, 239);
+    background-color: var(--black);
 }
 
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #000;
+    border-bottom: 3px solid var(--white);
 }
 
-img {
+/* take away the greyscale */
+/* img {
     filter: grayscale(100%);
-}
+} */
 
 h1 {
-    font-family: 'Montserrat Subrayada', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
     font-size: 4rem;
     margin: 0;
 }
 
 h2 {
-   font-family: 'Montserrat Subrayada', sans-serif; 
+   font-family: Arial, Helvetica, sans-serif;
+   color: var(--white);
 }
 
 h3 {
@@ -34,6 +49,7 @@ h3 {
 #header-text {
     flex-basis: 80%;
     display: flex;
+    justify-content: flex-end;
 }
 
 nav {
@@ -46,9 +62,17 @@ nav {
 a {
     margin: 2px;
     text-decoration: none;
-    color: #000;
+    color: var(--white);
 }
 
 a, p {
-    font-family: monospace;
+    font-family: Arial, Helvetica, sans-serif;
+    color:var(--white);
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
