@@ -45,6 +45,12 @@ h2 {
 h3 {
     font-size: 2rem;
     margin: 0;
+    color: var(--mulberry);
+}
+
+h4{
+    font-size: 1rem;
+    color: var(--white);
 }
 
 #header-text {

@@ -12,7 +12,7 @@
 {% block content %}
 <div id="story-wrapper">
   <h2>{{ story.title }}</h2>
-  <h4>{{ story.author }}</h4>
+  <h3>{{ story.author }}</h3>
   <div id="story-content">
     {%if story.image %}
     <img src="{{ story.image }}" >
@@ -22,5 +22,22 @@
 
       {{ story.content|linebreaks }}
   </div>
+
+  <!-- Adding in comments to articles Sun 10 Dec -->
+  <h2>Comments</h2>
+  <br/>
+  {% if not post.comments.all %}
+    <h3>No comments </h3> <a href="#">Add a comment</a>
+  {% else %}
+    {% for comment in post.comments.all %}
+      <strong>
+        {{ comment.name }} -
+        {{ comment.date_added}}
+    </strong>
+    <br/>
+      {{ comment.body }}
+    {% endfor %}
+
+  {% endif %}
 </div>
 {% endblock %}
