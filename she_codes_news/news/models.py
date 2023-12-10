@@ -11,7 +11,6 @@ class NewsStory(models.Model):
     pub_date = models.DateField()
     content = models.TextField()
     image = models.URLField(null=True, blank=True)
-    
 
 class Comment(models.Model):
     post = models.ForeignKey(NewsStory, related_name='comments', on_delete=models.CASCADE)

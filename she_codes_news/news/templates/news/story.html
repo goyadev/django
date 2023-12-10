@@ -10,6 +10,7 @@
 {% endblock %} 
 
 {% block content %}
+<!-- {% debug %} -->
 <div id="story-wrapper">
   <h2>{{ story.title }}</h2>
   <h3>{{ story.author }}</h3>
@@ -26,16 +27,18 @@
   <!-- Adding in comments to articles Sun 10 Dec -->
   <h2>Comments</h2>
   <br/>
-  {% if not post.comments.all %}
+  {% if not story.comments.all %}
     <h3>No comments </h3> <a href="#">Add a comment</a>
   {% else %}
-    {% for comment in post.comments.all %}
+    {% for comment in story.comments.all %}
       <strong>
+        <h3>
         {{ comment.name }} -
         {{ comment.date_added}}
+        </h3>
     </strong>
     <br/>
-      {{ comment.body }}
+      <h3>{{ comment.body }}</h3>
     {% endfor %}
 
   {% endif %}
