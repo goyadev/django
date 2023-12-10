@@ -31,6 +31,7 @@ class StoryView(generic.DetailView):
 class AddStoryView(generic.CreateView):
     form_class = StoryForm
     template_name = 'news/createStory.html'
+    context_object_name = 'storyform'
     success_url = reverse_lazy('news:index')
 
     def dispatch(self, request, *args, **kwargs):

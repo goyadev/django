@@ -50,7 +50,7 @@ h3 {
 #header-text {
     flex-basis: 80%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: start;
 }
 
 nav {
