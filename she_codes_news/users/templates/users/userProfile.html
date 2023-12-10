@@ -1,10 +1,27 @@
 {% extends 'base.html' %} 
+{% load static %} 
+
 
 {% block content %}
 
 
-<div>
+<section>
   <h1>Welcome {{user.username}}</h1>
+</section>
+
+<h2>{{user.username}}'s stories</h2>
+
+<!-- Trying to add in the user stories -->
+
+<div id="all-stories">
+  {% if latest_stories %}
+      {% for story in all_stories %}
+
+          {% include "./storyCard.html" with story=story %}
+      {% endfor %}
+  {% else %}
+      <p>No stories are available.</p>
+  {% endif %}
 </div>
 
 {% endblock %}

@@ -5,6 +5,7 @@ from .models import CustomUser
 from .forms import CustomUserCreationForm
 
 
+
 class CreateAccountView(CreateView):
     form_class = CustomUserCreationForm
     success_url = reverse_lazy('login')
@@ -15,3 +16,4 @@ class UserProfile(generic.DetailView):
     model = CustomUser
     template_name = 'users/userProfile.html'
     context_object_name = 'profile'
+
