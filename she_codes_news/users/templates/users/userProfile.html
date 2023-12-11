@@ -9,15 +9,19 @@
   <h1>Welcome {{user.username}}</h1>
 </section>
 
+<section>Bio ?! {{user.bio}}</section>
+
 <h2>{{user.username}}'s stories</h2>
 
 <!-- Trying to add in the user stories -->
 
 <div id="all-stories">
-  {% if latest_stories %}
-      {% for story in all_stories %}
-
-          {% include "./storyCard.html" with story=story %}
+  {{user}}
+  <!-- upate latest stories to something else which makes more sense for naming -->
+  {% if user_stories %}
+  <!-- loop through variable which makes more sense -->
+      {% for story in user_stories %}
+        {% include "news/storyCard.html" with story=story %}
       {% endfor %}
   {% else %}
       <p>No stories are available.</p>
