@@ -12,6 +12,9 @@ class NewsStory(models.Model):
     content = models.TextField()
     image = models.URLField(null=True, blank=True)
 
+
+# Class created for comments
+
 class Comment(models.Model):
     post = models.ForeignKey(NewsStory, related_name='comments', on_delete=models.CASCADE)
     name = models.CharField(max_length=255)

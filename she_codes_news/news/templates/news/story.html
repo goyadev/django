@@ -24,7 +24,7 @@
       {{ story.content|linebreaks }}
   </div>
 
-  <!-- Adding in comments to articles Sun 10 Dec -->
+  <!-- Adding in comments to articles Sun 10 Dec. Currently working. Next step 12 Dec to build button and form to add comment-->
   <h2>Comments</h2>
   <br/>
   {% if not story.comments.all %}
@@ -44,4 +44,12 @@
 
   {% endif %}
 </div>
+{% endblock %}
+
+{% block comment %}
+<form action="" method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="submit">
+</form>
 {% endblock %}
