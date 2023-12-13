@@ -4,8 +4,11 @@ from django.http import HttpResponse
 from django.views import generic
 from django.urls import reverse_lazy
 from .models import NewsStory, Comment
-from .forms import StoryForm
+from .forms import StoryForm, CommentForm
 from django.shortcuts import redirect
+from django.shortcuts import get_object_or_404
+
+
 
 
 class IndexView(generic.ListView):
@@ -23,11 +26,15 @@ class IndexView(generic.ListView):
         return context
     # Here the  [:4] slice and negative pub_date allow for a snapshot of the latest four stories to show up in reverse chronological order (newest to oldest)
 
-
+# use getcontextdata. see line 20, change line 22
 class StoryView(generic.DetailView):
     model = NewsStory
     template_name = 'news/story.html'
     context_object_name = 'story'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = CommentForm()
+        return context
     
 
 class AddStoryView(generic.CreateView):
@@ -48,7 +55,15 @@ class AddStoryView(generic.CreateView):
     
 # Adding a view for comments form on the page, rather than opening a new page 12 Dec
 class AddCommentView(generic.CreateView):
-    form_class = Comment
+    form_class = CommentForm
     template_name = 'news/story.html'
     context_object_name = 'commentform'
-    success_url = reverse_lazy('news:index') #will need to update this to be the article page. May need reference to article number URL. Think on this
+
+    # a function to allow the URL to go to the right page
+    def get_success_url(self):
+        return reverse_lazy('news:story', kwargs={'pk':self.kwargs.get("pk")}) 
+    
+    def form_valid(self, form):
+        pk = self.kwargs.get("pk")
+        form.instance.post = get_object_or_404(NewsStory, pk=pk)
+        return super().form_valid(form)
