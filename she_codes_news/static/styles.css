@@ -1,27 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&display=swap');
 
+/* Import Google fonts */
+
+@import url('https://fonts.cdnfonts.com/css/comics');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inder&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+                
 /* Colours as root variables */
-
-
 :root {
-    --white: #eceaea;
-    --melon: #daa89b;
-    --rosybrown: #ae847e;
-    --darkpurple:#2c0e37;
-    --purple: #690375;
-    --mulberry:#cb429f;
-    --black:#121010;
+    --red: #cb0404;
+    --pink: #F2DFD7;
+    --yellow:#ebc772;
+    --slateblue:#1d1699;
+    --black:#141313;
+    --white:#f3eeee;
 }
 
+/* CSS Reset from Josh W Comeau */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    5. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    6. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    7. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    8. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+/* END CSS RESET */
+
 body {
-    background-color: var(--black);
+    background-color: var(--white);
+    margin: 0px;
 }
 
 header {
     display: flex;
+    background-color: var(--red);
     align-items: center;
-    justify-content: space-between;
-    border-bottom: 3px solid var(--white);
+    justify-content: center;
+    min-height: 340px;
+    border-bottom: 3px solid var(--slateblue);
+}
+
+/* white outline not working */
+#titletext {
+font-size: 6rem;
+  
 }
 
 /* take away the greyscale */
@@ -30,51 +89,64 @@ header {
 } */
 
 h1 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Comics', sans-serif;
     text-decoration: none;
     font-size: 4rem;
     margin: 0;
-    color: var(--white);
+    color: var(--slateblue);
 }
 
 h2 {
-   font-family: Arial, Helvetica, sans-serif;
-   color: var(--mulberry);
+    font-family: 'Lato', sans-serif;
+   color: var(--black);
 }
 
 h3 {
     font-size: 2rem;
     margin: 0;
-    color: var(--mulberry);
+    color: var(--black);
 }
 
 h4{
     font-size: 1rem;
-    color: var(--white);
+    color: var(--black);
 }
 
 #header-text {
-    flex-basis: 80%;
+    /* flex-basis: 80%; */
     display: flex;
     justify-content: start;
 }
 
 nav {
-    flex-basis: 20%;
+    /* flex-basis: 20%; */
+    background-color: var(--yellow);
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
 
+/* wavy line generator from CSS Tricks https://css-generators.com/wavy-shapes/ */
+
+#box {
+    --mask:
+      radial-gradient(2.19px at 50% 2.90px,#000 99%,#0000 101%) calc(50% - 4px) 0/8px 51% repeat-x,
+      radial-gradient(2.19px at 50% -0.9px,#0000 99%,#000 101%) 50% 2px/8px calc(51% - 2px) repeat-x,
+      radial-gradient(2.19px at 50% calc(100% - 2.90px),#000 99%,#0000 101%) calc(50% - 4px) 100%/8px 51% repeat-x,
+      radial-gradient(2.19px at 50% calc(100% + 0.90px),#0000 99%,#000 101%) 50% calc(100% - 2px)/8px calc(51% - 2px) repeat-x;
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
+  }
+
 a {
     margin: 2px;
     text-decoration: none;
-    color: var(--white);
+    color: var(--slateblue);
 }
 
-a, p {
-    font-family: Arial, Helvetica, sans-serif;
-    color:var(--white);
+p {
+    font-family: 'Lato', sans-serif;
+    color:var(--black);
 }
 
 form {
