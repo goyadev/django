@@ -24,6 +24,9 @@ family=Manjari&display=swap"
       </div>
       {% include './nav.html' %}
     </header>
+    {% load static %}
+    <img src="{% static 'SheCodes-news-banner.png' %}" alt="AI generated images of women in the style of an Archie comic from the 1950s coding, meeting, and typing">
+
     {% block content %}{% endblock %}
   </body>
 </html>

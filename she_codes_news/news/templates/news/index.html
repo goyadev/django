@@ -5,10 +5,10 @@
 {% endblock %} 
 
 {% block content %}
-
+<section class="sectioncontent">
 <br>
-<a href="{% url 'news:newStory' %}">Write New Story</a>
-
+<a class="writestorybutton" href="{% url 'news:newStory' %}">Write New Story</a>
+<br><br>
 <h2>Latest News</h2>
     <div id="latest-stories">
         {% if latest_stories %}
@@ -32,3 +32,4 @@
         {% endif %}
     </div>
 {% endblock %}
+</section>

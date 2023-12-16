@@ -1,6 +1,38 @@
+/* fonts to import */
+
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+/* Colours as root variables */
+:root {
+  --red: #dd3a10;
+  --pink: #ee7095;
+  --yellow:#facc39;
+  --slateblue:#139ab8;
+  --black:#070400;
+  --white:#f3eeee;
+}
+
+/* target the section */
+.sectioncontent {
+  margin: 50px;
+}
+
+/* Fake button out of HTML */
+.writestorybutton {
+  background-color:var(--pink);
+  color: var(--black);
+  padding: 10px 10px;
+  text-decoration: none;
+  border-radius: 10px;
+}
+.writestorybutton:hover {
+background-color: var(--yellow);
+}
+
 .story-card {
   margin: 2px;
-  border: 1px solid #000;
+  border: 3px solid black;
   padding: 5px;
 }
 
@@ -14,9 +46,10 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 1px 1px;
+  gap: 10px 10px;
   grid-template-areas: "left-1 right-1" "left-1 right-2" "left-1 right-3";
   max-height: 500px;
+ 
 }
 
 #story-card-1 {
@@ -68,6 +101,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  column-gap: 10px;
+  row-gap: 10px;
 }
 
 #all-stories .story-card {
@@ -86,6 +121,7 @@
 }
 
 h3 {
-  color: var(--melon);
+  font-family: 'Noticia Text', serif;
+  color: var(--black);
   font-size: 1rem;
 }
