@@ -67,12 +67,12 @@ body {
 }
 
 header {
-    display: flex;
+    /* display: flex; */
     background-color: var(--slateblue);
     align-items: center;
     justify-content: center;
     min-height: 200px;
-    border-bottom: 3px solid var(--red);
+    border-bottom: 3px solid var(--pink);
 }
 
 
@@ -121,20 +121,35 @@ h4{
 #header-text {
     /* flex-basis: 80%; */
     display: flex;
-    justify-content: start;
+    justify-content: center;
 }
 
 nav {
     /* flex-basis: 20%; */
-    background-color: var(--yellow);
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px;
+    /* align-items: flex-end; */
+}
+
+nav a {
+  background-color: var(--pink);
+  padding: 10px;
+  margin: 2px;
+  border-radius:10px ;
+}
+
+nav a:hover{
+  background-color: var(--yellow);
 }
 
 /* wavy line generator from CSS Tricks https://css-generators.com/wavy-shapes/ for postage stamp style nav*/
 
-#box {
+/* Note: could not get this to work the way I wanted to, so going with traditional nav bar styling instead */
+
+/* #box {
     --mask:
       radial-gradient(2.19px at 50% 2.90px,#000 99%,#0000 101%) calc(50% - 4px) 0/8px 51% repeat-x,
       radial-gradient(2.19px at 50% -0.9px,#0000 99%,#000 101%) 50% 2px/8px calc(51% - 2px) repeat-x,
@@ -143,11 +158,11 @@ nav {
     -webkit-mask: var(--mask);
             mask: var(--mask);
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
+  } */
 
 a {
     font-family: 'Noticia Text', serif;
-    margin: 2px;
+    /* margin: 2px; */
     text-decoration: none;
     color: var(--black);
 }
@@ -194,6 +209,7 @@ form.button {
   padding: 10px 10px;
   text-decoration: none;
   border-radius: 10px;
+  margin: 2px;
 }
 .writestorybutton:hover {
 background-color: var(--yellow);

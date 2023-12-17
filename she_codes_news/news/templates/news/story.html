@@ -1,53 +1,50 @@
 <!-- news/templates/news/story.html -->
-{% extends "base.html" %} 
-{% load static %} 
+{% extends "base.html" %}
+{% load static %}
 
 {% block stylesheets %}
-<link
-  rel="stylesheet"
-  type="text/css"
-  href="{% static 'news/styles.css'%}"/>
-{% endblock %} 
+<link rel="stylesheet" type="text/css" href="{% static 'news/styles.css'%}" />
+{% endblock %}
 
 {% block content %}
 <!-- {% debug %} -->
-<div id="story-wrapper">
+<section class="sectioncontent" id="story-wrapper">
   <h2>{{ story.title }}</h2>
   <h3>{{ story.author }}</h3>
-  <div id="story-content">
+  <section id="story-content">
     {%if story.image %}
-    <img src="{{ story.image }}" >
+    <img src="{{ story.image }}">
     {% else %}
     <img src="{% static '/news/images/placeholder-5.jpg'%}">
     {% endif %}
 
-      {{ story.content|linebreaks }}
-  </div>
+    {{ story.content|linebreaks }}
+  </section>
 
   <!-- Adding in comments to articles Sun 10 Dec. Currently working. Next step 12 Dec to build button and form to add comment-->
   <h2>Comments</h2>
-  <br/>
+  <br />
   {% if not story.comments.all %}
-    <h3>No comments </h3> <a href="#">Add a comment</a>
+  <h3>No comments </h3>
   {% else %}
-    {% for comment in story.comments.all %}
-      <strong>
-        <h3>
-        {{ comment.name }} -
-        {{ comment.date_added}}
-        </h3>
-    </strong>
-    <br/>
-      <p>{{ comment.body }}</p>
-      <br/><br/>
-    {% endfor %}
+  {% for comment in story.comments.all %}
+  <strong>
+    <h3>
+      {{ comment.name }} -
+      {{ comment.date_added}}
+    </h3>
+  </strong>
+  <br />
+  <p>{{ comment.body }}</p>
+  <br /><br />
+  {% endfor %}
 
   {% endif %}
-</div>
+</section>
 
-<form action="{% url 'news:addComment' story.id %}" method="post">
-{% csrf_token %}
-{{ form.as_p }}
-<input type="submit" value="submit">
+<form class="commentform" action="{% url 'news:addComment' story.id %}" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="submit">
 </form>
 {% endblock %}
