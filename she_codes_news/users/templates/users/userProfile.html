@@ -1,31 +1,37 @@
-{% extends 'base.html' %} 
-{% load static %} 
+{% extends 'base.html' %}
+{% load static %}
 
 
 {% block content %}
 
+<section class="contentpage">
 
-<section>
-  <h1>Welcome {{user.username}}</h1>
+  <h2 class="contenth2">Welcome {{user.username}}</h2>
+  <section class="buttons">
+    <a class="writestorybutton" href="{% url 'news:newStory' %}">Write New Story</a> <br>
+    <a class="writestorybutton" href="#">Edit Account</a>
+    <a class="writestorybutton" href="{% url 'users:createAccount' %}">Create New Account</a>
+    <a class="writestorybutton" href="#">Delete Account</a>
+  </section>
+
+  <section>Bio ?! {{user.bio}}</section>
+
+  <h2>{{user.username}}'s stories</h2>
+
+  <!-- Trying to add in the user stories -->
+
+  <div class="user-stories">
+    <!-- upate latest stories to something else which makes more sense for naming -->
+    {% if user_stories %}
+    <!-- loop through variable which makes more sense -->
+    {% for story in user_stories %}
+    {% include "news/storyCard.html" with story=story %}
+    {% endfor %}
+    {% else %}
+    <p>No stories are available.</p>
+    {% endif %}
+  </div>
+
+  {% endblock %}
+
 </section>
-
-<section>Bio ?! {{user.bio}}</section>
-
-<h2>{{user.username}}'s stories</h2>
-
-<!-- Trying to add in the user stories -->
-
-<div id="all-stories">
-  {{user}}
-  <!-- upate latest stories to something else which makes more sense for naming -->
-  {% if user_stories %}
-  <!-- loop through variable which makes more sense -->
-      {% for story in user_stories %}
-        {% include "news/storyCard.html" with story=story %}
-      {% endfor %}
-  {% else %}
-      <p>No stories are available.</p>
-  {% endif %}
-</div>
-
-{% endblock %}

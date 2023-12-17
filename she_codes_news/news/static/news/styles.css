@@ -18,17 +18,7 @@
   margin: 50px;
 }
 
-/* Fake button out of HTML */
-.writestorybutton {
-  background-color:var(--pink);
-  color: var(--black);
-  padding: 10px 10px;
-  text-decoration: none;
-  border-radius: 10px;
-}
-.writestorybutton:hover {
-background-color: var(--yellow);
-}
+
 
 .story-card {
   margin: 2px;
@@ -125,3 +115,4 @@ h3 {
   color: var(--black);
   font-size: 1rem;
 }
+

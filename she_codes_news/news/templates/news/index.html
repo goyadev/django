@@ -1,35 +1,35 @@
-{% extends "base.html" %} 
-{% load static %} 
+{% extends "base.html" %}
+{% load static %}
 {% block stylesheets %}
-    <link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}" />
-{% endblock %} 
+<link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}" />
+{% endblock %}
 
 {% block content %}
 <section class="sectioncontent">
-<br>
-<a class="writestorybutton" href="{% url 'news:newStory' %}">Write New Story</a>
-<br><br>
-<h2>Latest News</h2>
+
+    <br><br>
+    <h2>Latest News</h2>
     <div id="latest-stories">
         {% if latest_stories %}
-            {% for story in latest_stories %}
+        {% for story in latest_stories %}
 
-            {% include "./storyCard.html" with story=story position=forloop.counter %}
-            {% endfor %}
+        {% include "./storyCard.html" with story=story position=forloop.counter %}
+        {% endfor %}
         {% else %}
-            <p>No stories are available.</p>
+        <p>No stories are available.</p>
         {% endif %}
     </div>
-
+    <br><br>
+    <h2>All News</h2>
     <div id="all-stories">
         {% if latest_stories %}
-            {% for story in all_stories %}
+        {% for story in all_stories %}
 
-                {% include "./storyCard.html" with story=story %}
-            {% endfor %}
+        {% include "./storyCard.html" with story=story %}
+        {% endfor %}
         {% else %}
-            <p>No stories are available.</p>
+        <p>No stories are available.</p>
         {% endif %}
     </div>
-{% endblock %}
+    {% endblock %}
 </section>
