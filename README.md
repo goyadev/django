@@ -8,41 +8,41 @@ Django 4.2.2
 3. Migrate data with `python manage.py runserver`
 
 ## Database Schema
-![ My ERD ](/images/ERD-shecodesnews)
+![ My ERD ](./images/ERD-shecodesnews.png)
 
 ## Project Features
 - [x] Order stories by date
-![ {{ Description of image }} ]( {{ ./relative_path_to_image_file }} )
+![ Screenshot of stories ordered by date ]( ./images/ordered-stories-date.png )
 - [x] Styled "new story" form
-![ {{ Description of image }} ]( {{ ./relative_path_to_image_file }} )
+![ Basic styling for form ]( ./images/styled-new-story-form.png )
 - [x] Story images
-![ {{ Description of image }} ]( {{ ./relative_path_to_image_file }} )
+![ Images from stories ]( ./images/ordered-stories-date.png )
 - [x] Log-in/log-out
-![ {{ Description of image }} ]( {{ ./relative_path_to_image_file }} )
+![ Log in ]( ./images/login.png )
+![ Log out ]( ./images/logout.png)
 - [x] "Account view" page
-![ {{ Description of image }} ]( {{ ./relative_path_to_image_file }} )
+![ User profile page ]( ./images/account-view.png)
 - [x] "Create Account" page
-![ {{ Description of image }} ]( {{ ./relative_path_to_image_file }} )
+![ Basic styled create account page ]( ./images/create-account.png)
 - [x] View stories by author
-![ {{ Description of image }} ]( {{ ./relative_path_to_image_file }} )
+![ Author view in profile ]( ./images/stories-by-author.png )
 - [x] "Log-in" button only visible when no user is logged in/"Log-out" button only visible when a user *is* logged in
-![ {{ Description of image }} ]( {{ ./relative_path_to_image_file }} )
+![ login visible, logged out user ]( ./images/login-visible.png)
+![ logout visible, logged in user ]( ./images/logout-visible.png)
 - [x] "Create Story" functionality only available when user is logged in
-![ {{ Description of image }} ]( {{ ./relative_path_to_image_file }} )
+![ In nav, the create story function is not visible if not logged in ]( ./images/write-story-visible.png)
 
 ## Additional Features:
 - [x] Add the ability to comment on stories within the story page
-![ {{ Description of image }} ]( {{ ./relative_path_to_image_file }} )
+![ On page article comments immediately visible]( ./images/add-comment.png )
 - [x] Gracefully handle the error where someone tries to create a new story when they are not logged in.
-![ {{ Description of image }} ]( {{ ./relative_path_to_image_file }} )
+![ The create new story auto-redirects to login page if clicked while not logged in]( ./images/graceful-redirect-add-story.png)
 
 ## Future Ideas:
 - [ ] Dark mode feature toggle
-
 - [ ] Add the ability to update and delete stories 
-
+- [ ] Add the ability for user to edit and delete account
 - [ ] Add the ability to “favourite” stories and see a page with your favourite
-
 - [ ] Category or keyword search function
 
 
