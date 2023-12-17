@@ -8,7 +8,7 @@ Django 4.2.2
 3. Migrate data with `python manage.py runserver`
 
 ## Database Schema
-![ {{ My ERD }} ]( {{ ../images/ERD-shecodesnews }} )
+![ My ERD ](/images/ERD-shecodesnews)
 
 ## Project Features
 - [x] Order stories by date
@@ -31,8 +31,7 @@ Django 4.2.2
 ![ {{ Description of image }} ]( {{ ./relative_path_to_image_file }} )
 
 ## Additional Features:
-- [x] Add the ability to update and delete stories (consider permissions - who
-should be allowed to update or and/or delete stories).
+- [x] Add the ability to comment on stories within the story page
 ![ {{ Description of image }} ]( {{ ./relative_path_to_image_file }} )
 - [x] Gracefully handle the error where someone tries to create a new story when they are not logged in.
 ![ {{ Description of image }} ]( {{ ./relative_path_to_image_file }} )
